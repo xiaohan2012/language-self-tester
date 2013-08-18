@@ -1,0 +1,19 @@
+{
+  "name": "finlan",
+  "version": "0.0.0",
+  "description": "Automatic Quizer for Finnish Language Learning",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "finnish",
+    "language-learning",
+    "quiz"
+  ],
+  "author": "Han Xiao",
+  "license": "BSD",
+  "dependencies": {
+    "underscore": "~1.5.1"
+  }
+}

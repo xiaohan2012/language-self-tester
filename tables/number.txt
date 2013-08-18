@@ -1,0 +1,10 @@
+one,yksi
+two,kaksi
+three,kolme
+four,nelyä
+five,viisi
+six,guusi
+seven,seitsemän
+eight,kahdeksan
+nine,yhdeksän
+ten,kymmenen

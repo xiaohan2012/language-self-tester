@@ -1,0 +1,12 @@
+red,punainen
+violet,violetti
+green,vihreä
+yellow,keltainen
+blue,sininen
+orange,oranssi
+purple,purppura
+brown,ruskea
+pink,vaaleanpunainen
+darkblue,tummansininen
+lime,lime
+torqoise,turkoosi
