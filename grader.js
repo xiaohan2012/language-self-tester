@@ -45,6 +45,13 @@ module.exports.quizme = function(list, count){
 	else if(chunk.trim() == 'skip'){
 	    addMistake(quizzes[i]);
 	    i++;
+	    
+	    if(reachedEnd()) {
+		process.stdin.pause();
+		print(mistakes);
+		return;
+	    }
+
 	    quiz();
 	}
 	else if(quizzes[i].fi === chunk.trim()) {
