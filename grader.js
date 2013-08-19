@@ -1,15 +1,15 @@
 var _ = require('underscore');
 var print = console.log;
 
-module.exports.quizme = function(list, count){
+function quizme(list, count){
     if(!count) count = list.length;
     
     quizzes  = _.shuffle(list).slice(0,count);
     
     process.stdin.resume();
     process.stdin.setEncoding('utf8');
-    var i = 0,
-        mistakes = [];
+    
+    var i = 0, mistakes = [];
 
     var quiz = function(){
 	print(quizzes[i].en + ' :');
@@ -37,22 +37,31 @@ module.exports.quizme = function(list, count){
 	mistakes.push(word);
     }
 
-    process.stdin.on('data', function(chunk) {
+
+    var quizer = function(chunk) {
 	if(chunk.trim() == 'hint'){
 	    giveHint();
 	    addMistake(quizzes[i]);
 	}
 	else if(chunk.trim() == 'skip'){
+	    
 	    addMistake(quizzes[i]);
 	    i++;
 	    
 	    if(reachedEnd()) {
 		process.stdin.pause();
 		print(mistakes);
+
+		if(mistakes.length > 0){
+		    print('please fix the mistaken ones...')
+		    process.stdin.removeAllListeners('data')
+		    module.exports.quizme(mistakes)
+		}
 		return;
 	    }
 
 	    quiz();
+	    
 	}
 	else if(quizzes[i].fi === chunk.trim()) {
 	    congrat();
@@ -61,6 +70,12 @@ module.exports.quizme = function(list, count){
 	    if(reachedEnd()) {
 		process.stdin.pause();
 		print(mistakes);
+
+		if(mistakes.length > 0){
+		    print('please fix the mistaken ones...')
+		    process.stdin.removeAllListeners('data')
+		    module.exports.quizme(mistakes)
+		}
 		return;
 	    }
 	    
@@ -69,6 +84,11 @@ module.exports.quizme = function(list, count){
 	else{
 	    relent();
 	}
-    });
+    }
+
+    
+    process.stdin.on('data', quizer);
 
 }
+
+module.exports.quizme = quizme
