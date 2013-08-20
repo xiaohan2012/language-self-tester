@@ -31,3 +31,9 @@ And the second part("red" and "one") being the language you are more familiar wi
  `node main.js finnish`
 
  using the word list file we have just created.
+
+4. Future
+==================
+1. Statistics on result of each test taken in order to see the progress
+2. Timeline of all test taken in order to see how diligent you are
+3. Easy-to-forget words should be more likely to appear in subsequent tests
