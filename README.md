@@ -1,4 +1,4 @@
-Language Self Tester
+.Language Self Tester
 ===================
 
 1. Purpose
@@ -37,3 +37,5 @@ And the second part("red" and "one") being the language you are more familiar wi
 1. Statistics on result of each test taken in order to see the progress
 2. Timeline of all test taken in order to see how diligent you are
 3. Easy-to-forget words should be more likely to appear in subsequent tests
+4. Detailed record of how many times the spelling has been tried to get it right.(statistics for further test)
+5. Voice played when new quiz appears
